@@ -6,6 +6,7 @@ import net.md_5.bungee.api.plugin.Plugin;
 import java.net.Socket;
 import java.net.SocketAddress;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
@@ -22,13 +23,8 @@ public class HubManager {
         this.hubMap = new ConcurrentHashMap<>();
     }
 
-    public Hub get(String id) {
-        return getHubMap()
-                .values()
-                .stream()
-                .filter(hub -> hub.getName().equals(id))
-                .findAny()
-                .orElse(null);
+    public Optional<Hub> get(String id) {
+        return Optional.ofNullable(getHubMap().get(id));
     }
 
     public void add(Hub hub) {
