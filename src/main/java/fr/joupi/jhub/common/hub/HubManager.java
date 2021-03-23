@@ -71,11 +71,10 @@ public class HubManager {
                 .orElse(null);
     }
 
-    public Hub getHubWithLessPlayers() {
+    public Optional<Hub> getHubWithLessPlayers() {
         return getHubsOrdained()
                 .stream()
-                .findFirst()
-                .orElse(null);
+                .findFirst();
     }
 
     public boolean isOnline(SocketAddress address) {

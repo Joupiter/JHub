@@ -23,7 +23,7 @@ public class ConnectionListener implements Listener {
     public void onConnect(ServerConnectEvent event) {
         if (getJHub().getConfig().forcePlayerToGoHubOnConnect()) {
             ProxiedPlayer player = event.getPlayer();
-            Optional<Hub> hub = Optional.ofNullable(getJHub().getLoader().getHubManager().getHubWithLessPlayers());
+            Optional<Hub> hub = getJHub().getLoader().getHubManager().getHubWithLessPlayers();
 
             if (hub.isPresent())
                 event.setTarget(hub.get().getServerInfo());
@@ -36,7 +36,7 @@ public class ConnectionListener implements Listener {
     public void onServerKick(ServerKickEvent event) {
         if (getJHub().getConfig().redirectPlayerToHubOnServerClose()) {
             ProxiedPlayer player = event.getPlayer();
-            Optional<Hub> hub = Optional.ofNullable(getJHub().getLoader().getHubManager().getHubWithLessPlayers());
+            Optional<Hub> hub = getJHub().getLoader().getHubManager().getHubWithLessPlayers();
 
             if (hub.isPresent()) {
                 event.setCancelled(true);

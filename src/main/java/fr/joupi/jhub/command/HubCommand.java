@@ -27,7 +27,7 @@ public class HubCommand extends Command {
 
             if (args.length == 0) {
                 ServerInfo server = player.getServer().getInfo();
-                Optional<Hub> hub = Optional.ofNullable(jHub.getLoader().getHubManager().getHubWithLessPlayers());
+                Optional<Hub> hub = jHub.getLoader().getHubManager().getHubWithLessPlayers();
 
                 if (!jHub.getLoader().getHubManager().contains(server.getName()))
 
