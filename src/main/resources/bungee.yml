@@ -1,0 +1,4 @@
+name: jHub
+version: ${project.version}
+main: fr.joupi.jhub.JHub
+author: Joupi

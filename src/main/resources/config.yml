@@ -1,0 +1,47 @@
+################################################################
+# +----------------------------------------------------------+ #
+# |                   JHub Configuration                     | #
+# +----------------------------------------------------------+ #
+################################################################
+#
+# Plugin développer par Joupi
+# Discord: Joupi#5567
+
+# Les noms des hubs doivent correspondre à ceux dans la configuration de votre bungeecord
+hubs:
+  - "hub1"
+  - "hub2"
+
+# Quand le joueur se connecte au proxy il sera automatique redirigé sur le hub où il y a le moins de joueurs connectés
+force-player-to-go-hub-on-connect: true
+redirect-player-to-hub-on-server-close: true
+
+##################################
+#            Commande            #
+##################################
+
+command-name: "hub"
+command-aliases:
+  - "lobby"
+
+
+##################################
+#            Messages            #
+##################################
+# Placeholders:
+# <prefix> <hubName> <online>
+
+prefix: "&6JHub »"
+hub-not-found-message: "<prefix> &cAucun hub disponible"
+redirect-to-a-hub-message: "<prefix> &cVous avez été redirigé vers le hub (<hubName>)"
+already-in-hub-message: "<prefix> &aVous êtes déjà sur le hub"
+
+
+
+
+
+
+
+
+
+
