@@ -1,5 +1,6 @@
 package fr.joupi.jhub.common.hub;
 
+import com.google.common.collect.Comparators;
 import lombok.Getter;
 import net.md_5.bungee.api.plugin.Plugin;
 
@@ -61,7 +62,7 @@ public class HubManager {
         return getHubMap()
                 .values()
                 .stream()
-                .sorted(Comparator.comparingInt(o -> o.getPlayers().size()))
+                .sorted(Comparator.comparingInt(Hub::getPlayerCount).reversed())
                 .collect(Collectors.toList());
     }
 

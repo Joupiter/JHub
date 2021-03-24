@@ -27,6 +27,10 @@ public class Hub {
         return getServerInfo().getPlayers();
     }
 
+    public int getPlayerCount() {
+        return getPlayers().size();
+    }
+
     public SocketAddress getAddress() {
         return getServerInfo().getSocketAddress();
     }
