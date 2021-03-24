@@ -54,7 +54,7 @@ public class HubManager {
                 .values()
                 .stream()
                 .filter(hub -> isOnline(hub.getAddress()))
-                .sorted(Comparator.comparingInt(o -> o.getPlayers().size()))
+                .sorted(Comparator.comparingInt(Hub::getPlayerCount))
                 .collect(Collectors.toList());
     }
 
