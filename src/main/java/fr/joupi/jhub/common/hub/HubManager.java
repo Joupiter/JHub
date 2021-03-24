@@ -66,11 +66,9 @@ public class HubManager {
                 .collect(Collectors.toList());
     }
 
-    public Hub getHubWithMorePlayers() {
-        return getHubsOrdained()
-                .stream()
-                .reduce((first, second) -> second)
-                .orElse(null);
+    public Optional<Hub> getHubWithMorePlayers() {
+        return getHubsDesordered()
+                .stream().findFirst();
     }
 
     public Optional<Hub> getHubWithLessPlayers() {
