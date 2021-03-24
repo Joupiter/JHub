@@ -5,6 +5,7 @@ import net.md_5.bungee.api.plugin.Plugin;
 
 import java.net.Socket;
 import java.net.SocketAddress;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -52,7 +53,7 @@ public class HubManager {
                 .values()
                 .stream()
                 .filter(hub -> isOnline(hub.getAddress()))
-                .sorted(((o1, o2) -> (o1.getPlayers().size() < o2.getPlayers().size()) ? -1 : 0))
+                .sorted(Comparator.comparingInt(o -> o.getPlayers().size()))
                 .collect(Collectors.toList());
     }
 
@@ -60,7 +61,7 @@ public class HubManager {
         return getHubMap()
                 .values()
                 .stream()
-                .sorted(((o1, o2) -> (o1.getPlayers().size() > o2.getPlayers().size()) ? -1 : 0))
+                .sorted(Comparator.comparingInt(o -> o.getPlayers().size()))
                 .collect(Collectors.toList());
     }
 
