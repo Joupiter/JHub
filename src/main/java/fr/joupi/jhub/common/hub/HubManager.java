@@ -68,7 +68,8 @@ public class HubManager {
 
     public Optional<Hub> getHubWithMorePlayers() {
         return getHubsDesordered()
-                .stream().findFirst();
+                .stream()
+                .findFirst();
     }
 
     public Optional<Hub> getHubWithLessPlayers() {
