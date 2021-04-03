@@ -10,27 +10,27 @@ public class Log implements ILog {
     }
 
     @Override
-    public void sucess(String... strings) {
-        log("(Success)", strings);
+    public void sucess(String... messages) {
+        log(LogType.SUCCESS, messages);
     }
 
     @Override
-    public void info(String... strings) {
-        log("(Info)", strings);
+    public void info(String... messages) {
+        log(LogType.INFO, messages);
     }
 
     @Override
-    public void error(String... strings) {
-        log("(Error)", strings);
+    public void error(String... messages) {
+        log(LogType.ERROR, messages);
     }
 
     @Override
-    public void warning(String... strings) {
-        log("(Warning)", strings);
+    public void warning(String... messages) {
+        log(LogType.WARNING, messages);
     }
 
     @Override
-    public void debug(String... strings) {
-        log("(Debug)", strings);
+    public void debug(String... messages) {
+        log(LogType.DEBUG, messages);
     }
 }
