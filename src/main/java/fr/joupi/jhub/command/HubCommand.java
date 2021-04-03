@@ -39,7 +39,7 @@ public class HubCommand extends Command {
                 else jHub.getConfig().sendMessage(player, jHub.getConfig().getAlreadyInHubMessage());
             }
 
-        } else sender.sendMessage(new TextComponent(jHub.getConfig().getPrefix() + " "+ ChatColor.RED + "You must be a player !"));
+        } else sender.sendMessage(new TextComponent(jHub.getConfig().getPrefix() + " " + ChatColor.RED + "You must be a player !"));
     }
 
 }

@@ -28,7 +28,8 @@ public class JHubCommand extends Command {
 
             if (args.length == 0) {
                 sendMessages(sender, "&7Hubs:");
-                jHub.getLoader().getHubManager()
+                jHub.getLoader()
+                        .getHubManager()
                         .getHubsDesordered()
                         .forEach(hub -> sendInfoMessage(sender, hub, ChatColor.translateAlternateColorCodes('&',
                                 (jHub.getLoader().getHubManager().isOnline(hub.getAddress()) ? "&a✔" : "&c✘") + " &7Server: &b" + hub.getName() + " &7(&b" + hub.getPlayers().size() + "&7)")));

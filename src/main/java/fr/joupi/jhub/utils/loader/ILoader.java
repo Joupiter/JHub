@@ -1,4 +1,4 @@
-package fr.joupi.jhub.utils.loader.impl;
+package fr.joupi.jhub.utils.loader;
 
 public interface ILoader {
 

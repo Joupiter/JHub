@@ -26,7 +26,7 @@ public abstract class AbstractConfig implements IConfig {
         this.plugin = plugin;
         this.configName = configName;
         this.file = new File(plugin.getDataFolder(), configName);
-        createConfig();
+        this.createConfig();
     }
 
     private void createConfig() {

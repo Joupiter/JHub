@@ -1,7 +1,7 @@
-package fr.joupi.jhub.utils.loader;
+package fr.joupi.jhub.utils.loader.impl;
 
 import fr.joupi.jhub.JHub;
-import fr.joupi.jhub.utils.loader.impl.ILoader;
+import fr.joupi.jhub.utils.loader.ILoader;
 import lombok.Data;
 import net.md_5.bungee.api.plugin.Command;
 import net.md_5.bungee.api.plugin.Listener;

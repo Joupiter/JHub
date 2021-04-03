@@ -6,7 +6,7 @@ import fr.joupi.jhub.command.JHubCommand;
 import fr.joupi.jhub.common.hub.Hub;
 import fr.joupi.jhub.common.hub.HubManager;
 import fr.joupi.jhub.listener.ConnectionListener;
-import fr.joupi.jhub.utils.loader.BungeeLoader;
+import fr.joupi.jhub.utils.loader.impl.BungeeLoader;
 import lombok.Getter;
 
 @Getter
@@ -22,10 +22,12 @@ public class Loader extends BungeeLoader {
 
     @Override
     public void load() {
-        getPlugin().getConfig().getHubs()
+        getPlugin()
+                .getConfig()
+                .getHubs()
                 .stream()
-                .filter(s -> getPlugin().getProxy().getServers().containsKey(s))
-                .forEach(s -> getHubManager().add(new Hub(getPlugin(), s)));
+                .filter(name -> getPlugin().getProxy().getServers().containsKey(name))
+                .forEach(name -> getHubManager().add(new Hub(getPlugin(), name)));
 
         registerListeners(new ConnectionListener(getPlugin()));
 
@@ -35,6 +37,8 @@ public class Loader extends BungeeLoader {
     }
 
     @Override
-    public void unload()
-    { }
+    public void unload() {
+        getHubManager().getHubMap().clear();
+    }
+
 }
